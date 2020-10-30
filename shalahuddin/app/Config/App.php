@@ -23,7 +23,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://localhost/pemweblan/shalahuddin';
+	public $baseURL = 'http://localhost/project01/shalahuddin';
 
 	/*
 	|--------------------------------------------------------------------------

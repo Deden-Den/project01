@@ -35,8 +35,13 @@ class BelajarLibrary extends BaseController
 
             echo view('BelajarFormLib/ViewFormVal', $data);
         } else {
+            if (!array_key_exists($dataInput['pendidikan'], $model->opsiPendidikan())) {
+                echo "Data pendidikan terakhir yang anda masukan tidak ada dalam database kami";
+            }
             //lebih direkomendasikan menggunakan view tersendiri
-            echo "Halo, " . $dataInput['username'] . " pendidikan terakhir anda adalah " . $dataInput['pendidikan'];
+            $pilihan = $dataInput['pendidikan'];
+            $opsi = $model->opsiPendidikan();
+            echo "Halo, " . $dataInput['username'] . " pendidikan terakhir anda adalah " . $opsi[$pilihan];
         }
     }
 }
@@ -45,8 +50,3 @@ class BelajarLibrary extends BaseController
 //$pilihan = $dataInput['pendidikan'];
 //$opsi = $model->opsiPendidikan();
 //echo "Halo, ".$dataInput['username']." pendidikan terakhir anda adalah ".$opsi[$pilihan];
-
-
-//  if(!array_key_exists($dataInput['pendidikan'],$model->opsiPendidikan())){
-//      echo "Data pendidikan terakhir yang anda masukan tidak ada dalam database kami";
-//  }
