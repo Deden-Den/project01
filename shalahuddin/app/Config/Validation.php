@@ -51,4 +51,14 @@ class Validation
 			'required' => 'Pendidikan terakhir wajib diisi',
 		]
 	];
+
+	public $formCariDosen = [
+		'keyword' => 'required'
+	];
+
+	public $formCariDosen_errors = [
+		'keyword' => [
+			'required' => 'Kata kunci wajib diisi'
+		]
+	];
 }
